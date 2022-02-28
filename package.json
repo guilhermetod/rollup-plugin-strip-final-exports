@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-strip-final-exports",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Rollup plugin to strip the exports left in the output files",
   "keywords": [
     "Rollup",
