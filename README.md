@@ -1,4 +1,4 @@
-# Rollup plugin remove final exports
+# Rollup plugin strip final exports
 
 ## Description
 
@@ -21,7 +21,7 @@ export default {
 }
 ```
 
-By using this plugin, he following lines will be removed from your output file
+By using this plugin, the following lines will be removed from your output file
 
 ### CommonJS modules
 <br />
