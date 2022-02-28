@@ -1,0 +1,40 @@
+name: Delivery
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-release:
+    name: Validate, build and release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      - name: Install dependencies
+        run: npm ci
+      - name: Lint
+        run: npm run lint
+      - name: Test
+        run: npm run test:ci
+      - name: Build
+        run: npm run build
+      - name: Release
+        run: npm run release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Create sync pull request
+        uses: tretuna/sync-branches@1.4.0
+        with:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          CONTENT_COMPARISON: true
+          FROM_BRANCH: 'main'
+          TO_BRANCH: 'develop'

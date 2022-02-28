@@ -1,0 +1,17 @@
+# compiled output
+/dist
+/tmp
+
+# dependencies
+/node_modules
+
+# misc
+debug.log
+npm-debug.log
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# test reports
+/tests/reports/

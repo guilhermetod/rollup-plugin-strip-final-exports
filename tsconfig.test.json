@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.base",
+  "compilerOptions": {
+    "types": [
+      "jest",
+      "node"
+    ],
+  },
+  "include": [
+    "./src/**/*.test.ts",
+    "./tests/**/*.ts"
+  ],
+}

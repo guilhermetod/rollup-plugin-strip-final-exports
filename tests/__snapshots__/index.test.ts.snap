@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Strip final exports should strip CommonJS final exports from "export-all.cjs" 1`] = `
+"'use strict';
+
+var sayHello = function sayHello() {
+  return 'Hello, world';
+};
+
+var exportAll = sayHello;
+
+"
+`;
+
+exports[`Strip final exports should strip CommonJS final exports from "export-as.cjs" 1`] = `
+"'use strict';
+
+var sayHello$1 = function sayHello() {
+  return 'Hello, world';
+};
+
+const { sayHello } = sayHello$1;
+
+var exportAs = { hello: sayHello };
+
+"
+`;
+
+exports[`Strip final exports should strip CommonJS final exports from "export-default.cjs" 1`] = `
+"'use strict';
+
+var sayHello$1 = function sayHello() {
+  return 'Hello, world';
+};
+
+const { sayHello } = sayHello$1;
+
+var exportDefault = sayHello;
+
+"
+`;
+
+exports[`Strip final exports should strip CommonJS final exports from "named-export.cjs" 1`] = `
+"'use strict';
+
+var sayHello$1 = function sayHello() {
+  return 'Hello, world';
+};
+
+const { sayHello } = sayHello$1;
+
+var namedExport = { sayHello };
+
+"
+`;
+
+exports[`Strip final exports should strip ESModules final exports from "export-all.js" 1`] = `
+"var sayHello = function sayHello() {
+  return 'Hello, world';
+};
+"
+`;
+
+exports[`Strip final exports should strip ESModules final exports from "export-as.js" 1`] = `
+"function sayHello() {
+  return 'Hello, world';
+}
+
+"
+`;
+
+exports[`Strip final exports should strip ESModules final exports from "export-default.js" 1`] = `
+"function sayHello() {
+  return 'Hello, world';
+}
+
+"
+`;
+
+exports[`Strip final exports should strip ESModules final exports from "named-export.js" 1`] = `
+"function sayHello() {
+  return 'Hello, world';
+}
+
+"
+`;
